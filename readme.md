@@ -1,6 +1,7 @@
 drone on localhost
 ==================
-test drone server and agent on localhost, need ngrok to publish localhost
+drone server and agent on localhost for bitbucket, need ngrok to publish localhost
+configuration for other git servers are available on [drone documentation](http://readme.drone.io/admin/)
 
 ## how to use
 1. install ngrok and forward localhost:80
