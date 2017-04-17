@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+export APP_PORT=${APP_PORT:-80}
+export BITBUCKET_CLIENT=${BITBUCKET_CLIENT:-8X44UTcxAMS8ebPREA}
+export BITBUCKET_SECRET=${BITBUCKET_SECRET:-VPzxmQuaMXjW5HFy7Qytnk3LuyyXDuPY}
+
+CMD="docker-compose up -d"
+$CMD

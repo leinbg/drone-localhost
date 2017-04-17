@@ -1,0 +1,26 @@
+version: '2'
+services:
+  drone-server:
+    image: drone/drone:latest
+    ports:
+      - ${APP_PORT}:8000
+    volumes:
+      - ./drone:/var/lib/drone/
+    restart: always
+    environment:
+      - DRONE_OPEN=true
+      - DRONE_BITBUCKET=true
+      - DRONE_BITBUCKET_CLIENT=${BITBUCKET_CLIENT}
+      - DRONE_BITBUCKET_SECRET=${BITBUCKET_SECRET}
+      - DRONE_SECRET=secret
+
+  drone-agent:
+    image: drone/drone:latest
+    command: agent
+    restart: always
+    depends_on: [ drone-server ]
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - DRONE_SERVER=ws://drone-server:8000/ws/broker
+      - DRONE_SECRET=secret

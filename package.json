@@ -1,0 +1,10 @@
+{
+  "name": "drone-on-localhost",
+  "version": "1.0.0",
+  "description": "drone CI Server on localhost",
+  "author": "lei",
+  "license": "MIT",
+  "devDependencies": {
+    "ngrok": "^2.2.6"
+  }
+}
